@@ -26,6 +26,11 @@ class ClapTrap {
 		int			getMana() const;
 		int			getAd() const;
 		std::string	getName() const;
+
+		void		setPv(int num);
+		void		setMana(int num);
+		void		setAd(int num);
+
 };
 
 #endif

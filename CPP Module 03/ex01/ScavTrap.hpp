@@ -5,12 +5,6 @@
 
 class ScavTrap : public ClapTrap{
 
-	private:
-		std::string	_name;
-		int			_pv;
-		int			_mana;
-		int			_ad;
-
 	public:
 		ScavTrap(std::string);
 		ScavTrap(ScavTrap const&);

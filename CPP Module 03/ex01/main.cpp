@@ -6,6 +6,11 @@ int	main(){
 	ScavTrap Skarner("Skarner");
 	ScavTrap Azir(Skarner);
 
+
+	std::cout << "Teemo pv = " << Teemo.getPv() << std::endl;
+	std::cout << "Teemo mana = " << Teemo.getMana() << std::endl;
+	std::cout << "Teemo ad = " << Teemo.getAd() << std::endl;
+
 	std::cout << "Skarner pv = " << Skarner.getPv() << std::endl;
 	std::cout << "Skarner mana = " << Skarner.getMana() << std::endl;
 	std::cout << "Skarner ad = " << Skarner.getAd() << std::endl;
@@ -35,25 +40,6 @@ int	main(){
 	Teemo.beRepaired(4);
 	std::cout << "Teemo hp = " << Teemo.getPv() << std::endl;
 
-	std::cout << "Teemo mana = " << Teemo.getMana() << std::endl;
-	Teemo.attack("Yumi");
-	std::cout << "Teemo mana = " << Teemo.getMana() << std::endl;
-	Teemo.attack("Yumi");
-	std::cout << "Teemo mana = " << Teemo.getMana() << std::endl;
-	Teemo.attack("Yumi");
-	std::cout << "Teemo mana = " << Teemo.getMana() << std::endl;
-	Teemo.attack("Yumi");
-	std::cout << "Teemo mana = " << Teemo.getMana() << std::endl;
-	Teemo.attack("Yumi");
-	std::cout << "Teemo mana = " << Teemo.getMana() << std::endl;
-	Teemo.attack("Yumi");
-	std::cout << "Teemo mana = " << Teemo.getMana() << std::endl;
-	Teemo.attack("Yumi");
-	std::cout << "Teemo mana = " << Teemo.getMana() << std::endl;
-	Teemo.attack("Yumi");
-	std::cout << "Teemo mana = " << Teemo.getMana() << std::endl;
-	Teemo.attack("Yumi");
-	std::cout << "Teemo mana = " << Teemo.getMana() << std::endl;
-	Teemo.attack("Yumi");
+	Skarner.guardGate();
 	return 0;
 }

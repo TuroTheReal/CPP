@@ -42,8 +42,20 @@ int ClapTrap::getAd() const{
 	return this->_ad;
 }
 
+void ClapTrap::setPv(int num){
+	this->_pv = num;
+}
+
+void ClapTrap::setMana(int num){
+	this->_mana = num;
+}
+
+void ClapTrap::setAd(int num){
+	this->_ad = num;
+}
+
 void ClapTrap::attack(const std::string& target){
-	if (this->_mana > 0)
+	if (this->_mana > 0 || this->_pv > 0)
 	{
 		std::cout << this->_name << " attacks " << target <<
 		" causing, " << this->_ad << " points of damage!" << std::endl;
@@ -51,8 +63,16 @@ void ClapTrap::attack(const std::string& target){
 	}
 	else
 	{
-		std::cout << this->_name << " cannot attacks " << target <<
-		" because he is out of mana!" << std::endl;
+		if (this->_mana <= 0)
+		{
+			std::cout << this->_name << " cannot attacks " << target <<
+			" because he is out of mana!" << std::endl;
+		}
+		else
+		{
+			std::cout << this->_name << " cannot attacks " << target <<
+			" because he has no hp left!" << std::endl;
+		}
 	}
 }
 

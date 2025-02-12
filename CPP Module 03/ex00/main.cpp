@@ -20,6 +20,13 @@ int	main(){
 	Teemo.beRepaired(4);
 	std::cout << "Teemo hp = " << Teemo.getPv() << std::endl;
 
+	Teemo.takeDamage(12);
+	Teemo.attack("Yumi");
+
+	Teemo.beRepaired(10);
+	std::cout << "Teemo hp = " << Teemo.getPv() << std::endl;
+
+
 	std::cout << "Teemo mana = " << Teemo.getMana() << std::endl;
 	Teemo.attack("Yumi");
 	std::cout << "Teemo mana = " << Teemo.getMana() << std::endl;
@@ -40,5 +47,6 @@ int	main(){
 	Teemo.attack("Yumi");
 	std::cout << "Teemo mana = " << Teemo.getMana() << std::endl;
 	Teemo.attack("Yumi");
+
 	return 0;
 }

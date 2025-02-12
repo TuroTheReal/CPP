@@ -2,14 +2,8 @@
 #include "ScavTrap.hpp"
 
 int	main(){
-	ClapTrap Teemo("Teemo");
 	ScavTrap Skarner("Skarner");
 	ScavTrap Azir(Skarner);
-
-
-	std::cout << "Teemo pv = " << Teemo.getPv() << std::endl;
-	std::cout << "Teemo mana = " << Teemo.getMana() << std::endl;
-	std::cout << "Teemo ad = " << Teemo.getAd() << std::endl;
 
 	std::cout << "Skarner pv = " << Skarner.getPv() << std::endl;
 	std::cout << "Skarner mana = " << Skarner.getMana() << std::endl;
@@ -27,18 +21,6 @@ int	main(){
 
 	Skarner.beRepaired(1);
 	std::cout << "Skarner hp = " << Skarner.getPv() << std::endl;
-
-
-	std::cout << "Teemo mana = " << Teemo.getMana() << std::endl;
-
-	Teemo.attack("Yumi");
-	std::cout << "Teemo mana = " << Teemo.getMana() << std::endl;
-
-	Teemo.takeDamage(8);
-	std::cout << "Teemo hp = " << Teemo.getPv() << std::endl;
-
-	Teemo.beRepaired(4);
-	std::cout << "Teemo hp = " << Teemo.getPv() << std::endl;
 
 	Skarner.guardGate();
 	return 0;

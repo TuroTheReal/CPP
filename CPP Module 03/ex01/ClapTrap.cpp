@@ -1,6 +1,6 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string name) : _name(name), _pv(10), _mana(10), _ad(10){
+ClapTrap::ClapTrap(std::string name) : _name(name), _pv(10), _mana(10), _ad(0){
 	std::cout << "Player " << this->_name << " has spawn" << std::endl;
 }
 

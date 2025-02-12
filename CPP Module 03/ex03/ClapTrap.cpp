@@ -1,5 +1,10 @@
 #include "ClapTrap.hpp"
 
+
+ClapTrap::ClapTrap(){
+		std::cout << "Clap Default Constructor called for " << this->_name << std::endl;
+}
+
 ClapTrap::ClapTrap(std::string name) : _name(name), _pv(10), _mana(10), _ad(0){
 	std::cout << "Player " << this->_name << " has spawn" << std::endl;
 }
@@ -42,8 +47,20 @@ int ClapTrap::getAd() const{
 	return this->_ad;
 }
 
+void ClapTrap::setPv(int num){
+	this->_pv = num;
+}
+
+void ClapTrap::setMana(int num){
+	this->_mana = num;
+}
+
+void ClapTrap::setAd(int num){
+	this->_ad = num;
+}
+
 void ClapTrap::attack(const std::string& target){
-	if (this->_mana > 0 && this->_pv > 0)
+	if (this->_mana > 0 || this->_pv > 0)
 	{
 		std::cout << this->_name << " attacks " << target <<
 		" causing, " << this->_ad << " points of damage!" << std::endl;

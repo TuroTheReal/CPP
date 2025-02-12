@@ -22,6 +22,28 @@ ScavTrap& ScavTrap::operator=(ScavTrap const& rhs){
 	return *this;
 }
 
+void ScavTrap::attack(const std::string& target){
+	if (this->getMana() > 0 || this->getPv() > 0)
+	{
+		std::cout << "ScavTrap " << this->getName() << " attacks " << target <<
+		" causing, " << this->getAd() << " points of damage!" << std::endl;
+		setMana(this->getMana() - 1);
+	}
+	else
+	{
+		if (this->getMana() <= 0)
+		{
+			std::cout << "ScavTrap " << this->getName() << " cannot attacks " << target <<
+			" because he is out of mana!" << std::endl;
+		}
+		else
+		{
+			std::cout<< "ScavTrap " << this->getName() << " cannot attacks " << target <<
+			" because he has no hp left!" << std::endl;
+		}
+	}
+}
+
 void	ScavTrap::guardGate(){
 	std::cout << "Scavtrap " << this->getName() << " is now in Gate keeper mode!" << std::endl;
 }

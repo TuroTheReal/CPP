@@ -3,15 +3,21 @@
 
 #include <iostream>
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class Dog : public Animal{
+
+	private:
+		Brain* _brain;
+
 	public:
 		Dog();
 		Dog(std::string type);
 		Dog(Dog const& copy);
 		~Dog();
 
-		Dog&	operator=(Dog const& rhs);
+		Brain*	getBrain() const;
+		Dog& operator=(Dog const& rhs);
 		void	makeSound() const;
 };
 

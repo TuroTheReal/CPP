@@ -2,7 +2,7 @@
 #                                    MAIN                                     *
 #******************************************************************************
 
-NAME = Polymorphisme
+NAME = JeNeVeuxPasBrûlerleMonde
 
 #******************************************************************************
 #                                 DIRECTORIES                                 *
@@ -14,9 +14,9 @@ OBJ_DEP_DIR = obj_n_dep/
 #                   SOURCES, OBJECTS, HEADER & DEPENDENCIES                   *
 #******************************************************************************
 
-HEADER_SRC = Animal Cat Dog WrongCat WrongAnimal
+HEADER_SRC = Animal Cat Dog WrongCat WrongAnimal Brain
 
-CPP_SRC = main Animal Cat Dog WrongCat WrongAnimal
+CPP_SRC = main Animal Cat Dog WrongCat WrongAnimal Brain
 
 HEADER_FLS = $(addsuffix .hpp, $(HEADER_SRC))
 

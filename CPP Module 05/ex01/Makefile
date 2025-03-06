@@ -2,7 +2,7 @@
 #                                    MAIN                                     *
 #******************************************************************************
 
-NAME = Mommy
+NAME = Maggots
 #******************************************************************************
 #                                 DIRECTORIES                                 *
 #******************************************************************************
@@ -13,9 +13,9 @@ OBJ_DEP_DIR = obj_n_dep/
 #                   SOURCES, OBJECTS, HEADER & DEPENDENCIES                   *
 #******************************************************************************
 
-HEADER_SRC = Maggots
+HEADER_SRC = Bureaucrat Form
 
-CPP_SRC = main Bureaucrat
+CPP_SRC = main Bureaucrat Form
 
 HEADER_FLS = $(addsuffix .hpp, $(HEADER_SRC))
 

@@ -14,7 +14,7 @@ int main(){
 	Bureaucrat	JeanLaFrite;
 	Bureaucrat	JacqueLaFrape("JacqueLaFrape", 149);
 	JeanLaFrite = JacqueLaFrape;
-	Bureaucrat	GusleSang("Gus", 2);
+	Bureaucrat	GusleSang("GusLeSang", 2);
 
 	// print actuel
 	std::cout << JacqueLaFrape << std::endl;

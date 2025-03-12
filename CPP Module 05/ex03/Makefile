@@ -2,7 +2,8 @@
 #                                    MAIN                                     *
 #******************************************************************************
 
-NAME = Mommy
+NAME = CoffeeMaker
+
 #******************************************************************************
 #                                 DIRECTORIES                                 *
 #******************************************************************************
@@ -13,15 +14,23 @@ OBJ_DEP_DIR = obj_n_dep/
 #                   SOURCES, OBJECTS, HEADER & DEPENDENCIES                   *
 #******************************************************************************
 
-HEADER_SRC = CoffeeMaker
+SRC_FOLD = srcs/
 
-CPP_SRC = main Bureaucrat
+HEADER_FOLD = header/
+
+HEADER_SRC = Bureaucrat AForm ShrubberyCreationForm \
+PresidentialPardonForm RobotomyRequestForm Intern
+
+CPP_SRC = Bureaucrat AForm ShrubberyCreationForm \
+PresidentialPardonForm RobotomyRequestForm Intern
 
 HEADER_FLS = $(addsuffix .hpp, $(HEADER_SRC))
 
+HEADER = $(addprefix $(HEADER_FOLD), $(HEADER_FLS))
+
 CPP_FLS = $(addsuffix .cpp, $(CPP_SRC))
 
-SRC = $(CPP_FLS)
+SRC = $(addprefix $(SRC_FOLD), $(CPP_FLS))
 
 OBJ = $(addprefix $(OBJ_DEP_DIR), $(SRC:.cpp=.o))
 
@@ -55,21 +64,22 @@ all : $(NAME)
 	@echo "$(ROSE)COMPILATION FINISHED, $(NAME) IS CREATED!$(RESET)"
 
 $(NAME) : $(OBJ)
-	@$(CC) $(FLAGS) $(OBJ) -o $(NAME)
+	@$(CC) $(FLAGS) $(OBJ) main.cpp -o $(NAME)
 
-$(OBJ_DEP_DIR)%.o: %.cpp $(HEADER_FLS) | $(OBJF)
+$(OBJ_DEP_DIR)%.o: %.cpp $(HEADER) | $(OBJF)
 	@$(CC) $(FLAGS) -MMD -MP -c $< -o $@
 	@echo "$(BLEU)Compiling $< to $@.$(RESET)"
 
 $(OBJF):
-	@mkdir -p $(OBJ_DEP_DIR)
+	@mkdir -p $(OBJ_DEP_DIR)$(SRC_FOLD)
 
 clean :
 	@$(RM) $(OBJ_DEP_DIR)
 	@echo "$(VIOLET)Suppressing objects & dependencies files of $(NAME).$(RESET)"
 
 fclean : clean
-	@$(RM) $(NAME)
+	@$(RM) $(NAME) *_shrubbery
+
 	@echo "$(VERT)Suppressing archives $(NAME).$(RESET)"
 
 re : fclean all

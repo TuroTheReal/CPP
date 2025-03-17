@@ -2,7 +2,7 @@
 #                                    MAIN                                     *
 #******************************************************************************
 
-NAME = ScalarConverter
+NAME = Serializer
 
 #******************************************************************************
 #                                 DIRECTORIES                                 *
@@ -18,9 +18,9 @@ SRC_FOLD = srcs/
 
 HEADER_FOLD = header/
 
-HEADER_SRC = ScalarConverter
+HEADER_SRC = Serializer Data
 
-CPP_SRC = ScalarConverter
+CPP_SRC = Serializer Data
 
 HEADER_FLS = $(addsuffix .hpp, $(HEADER_SRC))
 

@@ -1,10 +1,10 @@
 #pragma once
 
 #include <iostream>
-#include <limits>
-#include <cmath>
-#include <cctype>
-#include <iomanip>
+#include <limits> // numeric_limits<T> max/min
+#include <cmath> // atol/i/f strtod
+#include <cctype> // is_digit
+#include <iomanip> // precision output , fixed empeche nota scientifique
 
 class ScalarConverter {
 	private:

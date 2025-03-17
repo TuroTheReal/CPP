@@ -18,9 +18,9 @@ SRC_FOLD = srcs/
 
 HEADER_FOLD = header/
 
-HEADER_SRC = ScarlarConverter
+HEADER_SRC = ScalarConverter
 
-CPP_SRC = ScarlarConverter
+CPP_SRC = ScalarConverter
 
 HEADER_FLS = $(addsuffix .hpp, $(HEADER_SRC))
 

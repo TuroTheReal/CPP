@@ -3,6 +3,8 @@
 #include <iostream>
 #include <limits>
 #include <cmath>
+#include <cctype>
+#include <iomanip>
 
 class ScalarConverter {
 	private:

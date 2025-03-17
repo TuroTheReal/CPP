@@ -12,7 +12,8 @@ ScalarConverter& ScalarConverter::operator=(const ScalarConverter& rhs){
 }
 
 static void	printError(const std::string str){
-	std::cout << "Cannot display : " << str << "." << std::endl;
+	std::cout << "Cannot display : " << str << std::endl;
+	exit (EXIT_FAILURE);
 }
 
 static void	printChar(const std::string str){
@@ -50,7 +51,7 @@ static void	printDouble(const std::string str){
 	char *end;
 
 	double nb = strtod(str.c_str(), &end);
-	if (nb != '\0')
+	if (*end != '\0')
 		printError(str);
 
 	if (nb < 0 || nb > 127)
@@ -82,6 +83,64 @@ static void	printInt(const std::string str){
 	std::cout << "double : " << static_cast<double>(nb) << std::endl;
 }
 
+static void	normalCase(const std::string str){
+	std::cout << "INFO : normalCase" << std::endl;
+
+	if (str[str.length() - 1] == 'f')
+	{
+		long unsigned i = 0;
+
+		if (str[0] == '-') i++;
+
+		while (std::isdigit(str[i]) || str[i] == '.')
+			i++;
+		if (i == str.length() - 1)
+			printFloat(str);
+		else
+		{
+			std::cout << "From float" << std::endl;
+			printError(str);
+		}
+	}
+	else if (str.find('.') != std::string::npos)
+	{
+		long unsigned i = 0;
+
+		if (str[0] == '-') i++;
+
+		while (std::isdigit(str[i]) || str[i] == '.')
+			i++;
+		if (i == str.length())
+			printDouble(str);
+		else
+		{
+			std::cout << "From double" << std::endl;
+			printError(str);
+		}
+	}
+	else if (std::isdigit(str[0]) || str[0] == '-')
+	{
+		long unsigned i = 0;
+
+		if (str[0] == '-') i++;
+
+		while (std::isdigit(str[i]))
+			i++;
+		if (i == str.length())
+			printInt(str);
+		else
+		{
+			std::cout << "From int" << std::endl;
+			printError(str);
+		}
+	}
+	else
+	{
+		std::cout << "From normalCase" << std::endl;
+		printError(str);
+	}
+}
+
 static void	edgeCase(const std::string str){
 	std::cout << "INFO : edgeCase" << std::endl;
 
@@ -107,50 +166,17 @@ static void	edgeCase(const std::string str){
 		std::cout << "float : nanf" << std::endl;
 		std::cout << "double : nan" << std::endl;
 	}
-
 	else
+	{
+		std::cout << "From edge" << std::endl;
 		printError(str);
+	}
 }
 
 void	ScalarConverter::convert(const std::string str){
 
-
-	if (!std::isdigit(str[0]) && std::isprint(str[0]))
-	edgeCase(str);
-
-	else if (str.length() - 1 == 'f')
-	{
-		long unsigned i = 0;
-
-		while (i < str.length() - 1 && (std::isdigit(str[i]) || str[i] == '.'))
-			i++;
-		if (i == str.length() - 1)
-			printFloat(str);
-		else
-			printError(str);
-	}
-	else if (str.find('.') != std::string::npos)
-	{
-		long unsigned i = 0;
-
-		while (std::isdigit(str[i]) || str[i] == '.')
-			i++;
-		if (i == str.length())
-			printDouble(str);
-		else
-			printError(str);
-	}
-	else if (std::isdigit(str[0]))
-	{
-		long unsigned i = 0;
-
-		while (i < str.length() && std::isdigit(str[i]))
-			i++;
-		if (i == str.length())
-			printInt(str);
-		else
-			printError(str);
-	}
+	if (std::isprint(str[0]) && !std::isdigit(str[0]) && !std::isdigit(str[1]))
+		edgeCase(str);
 	else
-		printError(str);
+		normalCase(str);
 }

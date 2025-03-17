@@ -41,7 +41,7 @@ static void	printFloat(const std::string str){
 		std::cout << "char : '" << static_cast<char>(nb) << "'"  << std::endl;
 	std::cout << "int : " << static_cast<int>(nb) << std::endl;
 	std::cout << std::fixed << std::setprecision(1);
-	std::cout << "float : " << static_cast<float>(nb) << "f" << std::endl;
+	std::cout << "float : " << nb << "f" << std::endl;
 	std::cout << "double : " << static_cast<double>(nb) << std::endl;
 }
 
@@ -63,7 +63,7 @@ static void	printDouble(const std::string str){
 	std::cout << "int : " << static_cast<int>(nb) << std::endl;
 	std::cout << std::fixed << std::setprecision(1);
 	std::cout << "float : " << static_cast<float>(nb) << "f" << std::endl;
-	std::cout << "double : " << static_cast<double>(nb) << std::endl;
+	std::cout << "double : " << nb << std::endl;
 }
 
 static void	printInt(const std::string str){
@@ -77,7 +77,7 @@ static void	printInt(const std::string str){
 		std::cout << "char : Non displayable" << std::endl;
 	else
 		std::cout << "char : '" << static_cast<char>(nb) << "'"  << std::endl;
-	std::cout << "int : " << static_cast<int>(nb) << std::endl;
+	std::cout << "int : " << nb << std::endl;
 	std::cout << std::fixed << std::setprecision(1);
 	std::cout << "float : " << static_cast<float>(nb) << "f" << std::endl;
 	std::cout << "double : " << static_cast<double>(nb) << std::endl;

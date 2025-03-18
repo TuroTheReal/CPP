@@ -83,4 +83,4 @@ re : fclean all
 
 -include $(DEP)
 
-.PHONY : re fclean clean all%
+.PHONY : re fclean clean all

@@ -2,33 +2,33 @@
 #                                    MAIN                                     *
 #******************************************************************************
 
-NAME = Serializer
+NAME = Iter
 
 #******************************************************************************
 #                                 DIRECTORIES                                 *
 #******************************************************************************
 
-OBJ_DEP_DIR = obj_n_dep/
+# OBJ_DEP_DIR = obj_n_dep/
 
 #******************************************************************************
 #                   SOURCES, OBJECTS, HEADER & DEPENDENCIES                   *
 #******************************************************************************
 
-SRC_FOLD = srcs/
+# SRC_FOLD = srcs/
 
 HEADER_FOLD = header/
 
-HEADER_SRC = Serializer Data
+HEADER_SRC = Iter
 
-CPP_SRC = Serializer Data
+# CPP_SRC =
 
 HEADER_FLS = $(addsuffix .hpp, $(HEADER_SRC))
 
 HEADER = $(addprefix $(HEADER_FOLD), $(HEADER_FLS))
 
-CPP_FLS = $(addsuffix .cpp, $(CPP_SRC))
+# CPP_FLS = $(addsuffix .cpp, $(CPP_SRC))
 
-SRC = $(addprefix $(SRC_FOLD), $(CPP_FLS))
+# SRC = $(addprefix $(SRC_FOLD), $(CPP_FLS))
 
 OBJ = $(addprefix $(OBJ_DEP_DIR), $(SRC:.cpp=.o))
 
@@ -64,7 +64,7 @@ all : $(NAME)
 $(NAME) : $(OBJ)
 	@$(CC) $(FLAGS) $(OBJ) main.cpp -o $(NAME)
 
-$(OBJ_DEP_DIR)%.o: %.cpp $(HEADER) | $(OBJF)
+$(OBJ_DEP_DIR)%.o : $(HEADER) | $(OBJF)
 	@$(CC) $(FLAGS) -MMD -MP -c $< -o $@
 	@echo "$(BLEU)Compiling $< to $@.$(RESET)"
 

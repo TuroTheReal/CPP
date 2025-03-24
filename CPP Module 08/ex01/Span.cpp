@@ -58,11 +58,3 @@ int	Span::longestSpan() {
 	int max = *std::max_element(_cont.begin(), _cont.end());
 	return max - min;
 }
-
-
-void	Span::addMore(unsigned int nb) {
-	if (nb > _cont.size())
-		throw maxSizeExceeded();
-	for (unsigned int i = 0; i < nb; i++)
-		addNumber(rand());
-}

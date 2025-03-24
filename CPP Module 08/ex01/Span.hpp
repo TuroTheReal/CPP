@@ -21,7 +21,14 @@ class Span {
 		Span& operator=(Span const& rhs);
 
 		void	addNumber(int nb);
-		void	addMore(unsigned int nb);
+
+		template <typename Iterator>
+		void	addMore(Iterator begin, Iterator end) {
+			if (std::distance(begin, end) + _cont.size() > _maxSize)
+				throw maxSizeExceeded();
+			_cont.insert(_cont.end(), begin, end);
+		}
+
 		int		shortestSpan();
 		int		longestSpan();
 

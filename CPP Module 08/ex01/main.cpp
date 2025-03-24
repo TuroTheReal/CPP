@@ -10,7 +10,6 @@ int	main(){
 	try { span1.addNumber(1996); }
 	catch (std::exception &e){ std::cout << e.what() << std::endl;}
 
-
 	Span span2(12);
 	span2.addNumber(1000);
 	span2.addNumber(3);
@@ -63,13 +62,42 @@ int	main(){
 		span5.addNumber(2);
 
 		for (size_t i = 0; i < span5._cont.size(); i++)
-			std::cout << span2._cont[i] << " ";
+			std::cout << span5._cont[i] << " ";
 		std::cout << std::endl;
 
-		span5.addMore(8);
+		int arr[] = {26,10,1996,2018};
+
+		span5.addMore(arr, arr + 3);
+
 		for (size_t i = 0; i < span5._cont.size(); i++)
-			std::cout << span2._cont[i] << " ";
+			std::cout << span5._cont[i] << " ";
 		std::cout << std::endl;
+
+		std::vector<int> levecteur;
+		levecteur.push_back(9877);
+		levecteur.push_back(6545);
+		levecteur.push_back(96);
+		levecteur.push_back(654);
+		levecteur.push_back(98);
+		span5.addMore(levecteur.begin(), levecteur.end());
+
+		for (size_t i = 0; i < span5._cont.size(); i++)
+			std::cout << span5._cont[i] << " ";
+		std::cout << std::endl;
+
+		std::vector<int> levecteur2;
+		levecteur2.push_back(9877);
+		levecteur2.push_back(6545);
+		levecteur2.push_back(96);
+		levecteur2.push_back(654);
+		levecteur2.push_back(984);
+		levecteur2.push_back(98);
+		span5.addMore(levecteur2.begin(), levecteur2.end());
+
+		for (size_t i = 0; i < span5._cont.size(); i++)
+			std::cout << span5._cont[i] << " ";
+		std::cout << std::endl;
+
 	}
 	catch (std::exception &e) { std::cout << e.what() << std::endl;}
 

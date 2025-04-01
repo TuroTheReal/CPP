@@ -14,14 +14,13 @@ class BitcoinExchange {
 		std::map<std::string, double> _dataBase;
 		std::string const& _input;
 		BitcoinExchange();
+		void	loadCSV();
+		void	parseInput();
+		double	getNearest(std::string const& string);
 
 	public:
 		BitcoinExchange(std::string const& string);
 		BitcoinExchange(BitcoinExchange const& copy);
 		~BitcoinExchange(){}
 		BitcoinExchange& operator=(BitcoinExchange const& rhs);
-
-		void	loadCSV();
-		void	parseInput();
-		double	getNearest(std::string date);
 };

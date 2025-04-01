@@ -2,12 +2,12 @@
 
 BitcoinExchange::BitcoinExchange(std::string const& string) : _input(string){
 	loadCSV();
-	// parseInput(_input);
+	parseInput();
 }
 
 BitcoinExchange::BitcoinExchange(BitcoinExchange const& copy) : _dataBase(copy._dataBase), _input(copy._input){
 	loadCSV();
-	// parseInput(_input);
+	parseInput();
 }
 
 BitcoinExchange& BitcoinExchange::operator=(BitcoinExchange const& rhs){
@@ -42,7 +42,7 @@ void	BitcoinExchange::loadCSV(){
 				_dataBase[date] = nb;
 			}
 			catch (std::exception &e) {
-				std::cerr << "Cannot convert ligne : " << e.what() << std::endl;
+				std::cerr << "Cannot convert lign : " << e.what() << std::endl;
 			}
 		}
 	}
@@ -58,17 +58,26 @@ void	BitcoinExchange::loadCSV(){
 
 static bool validDate(std::string const& date)
 {
+	if (*date.begin() == '\0')
+		return std::cerr << "Error: empty date." << std::endl, 0;
+	if (date.length() != 11)
+		return std::cerr << "Error: wrong format." << std::endl, 0;
+
+
+	// check si chiffre ou - seulement
+
+
 	std::istringstream iss(date);
 	std::string year;
 	std::string month;
 	std::string day;
 	if (getline(iss, year, '-') && getline(iss, month, '-') && getline(iss, day))
 	{
-		if (atoi(year.c_str()) < 2009 || atoi(year.c_str()) > 2026)
+		if (!(atoi(year.c_str()) > 2008 && atoi(year.c_str()) < 2026))
 			return std::cerr << "Error: bitcoin rate does not exist at this date." << std::endl, 0;
-		if (atoi(month.c_str()) > 0 && atoi(month.c_str()) < 13)
+		if (!(atoi(month.c_str()) > 0 || atoi(month.c_str()) < 13))
 			return std::cerr << "Error: bad input => " << date << std::endl, 0;
-		if (atoi(day.c_str()) > 0 && atoi(day.c_str()) > 32)
+		if (!(atoi(day.c_str()) > 0 && atoi(day.c_str()) < 32))
 			return std::cerr << "Error: bad input => " << date << std::endl, 0;
 		if (atoi(year.c_str()) == 2025 && atoi(month.c_str()) == 4 && atoi(day.c_str()) > 15)
 			return std::cerr << "Error: bitcoin rate does not exist at this date." << std::endl, 0;
@@ -85,8 +94,14 @@ static bool validRate(double rate)
 	return 1;
 }
 
+double BitcoinExchange::getNearest(std::string const& date){
+	std::map<std::string, double>::iterator it = _dataBase.upper_bound(date);
+	it--;
+	return it->second;
+}
+
 void	BitcoinExchange::parseInput(){
-	std::istringstream infile(_input);
+	std::ifstream infile(_input.c_str());
 	if (!infile)
 	{
 		std::cerr << "Error: could not open file" << std::endl;
@@ -108,10 +123,9 @@ void	BitcoinExchange::parseInput(){
 			if (*end != '\0')
 				std::cerr << "Error: convertion from str to double failed." << std::endl;
 			if (validDate(date) && validRate(nb))
-				std::cout << "OK" << std::endl;
-				// std::cout << date << " => " << rate << " = " << getNearest(date) * rate;
-			else
-				std::cerr << "Error: bad input => " << date << std::endl;
+				std::cout << date << "=>" << rate << " => " << getNearest(date) * nb << std::endl;
 		}
+		else
+			std::cerr << "Error: bad input => " << date << std::endl;
 	}
 }

@@ -56,21 +56,30 @@ void	BitcoinExchange::loadCSV(){
 	// }
 }
 
+static bool isAllowed(char c)
+{
+	return ((c >= '0' && c <= '9') || (c == '-') || (c == ' '));
+}
+
+static bool isValid(std::string const& date)
+{
+	for (size_t i = 0; i < date.size() ; i++)
+	if (!isAllowed(date[i]))
+		return 0;
+	return 1;
+}
+
 static bool validDate(std::string const& date)
 {
-	if (*date.begin() == '\0')
+	if (date.empty())
 		return std::cerr << "Error: empty date." << std::endl, 0;
-	if (date.length() != 11)
+	if (date.length() != 11 || date[4] != '-' || date[7] != '-')
 		return std::cerr << "Error: wrong format." << std::endl, 0;
-
-
-	// check si chiffre ou - seulement
-
+	if (!isValid(date))
+		return std::cerr << "Error: wrong character." << std::endl, 0;
 
 	std::istringstream iss(date);
-	std::string year;
-	std::string month;
-	std::string day;
+	std::string year, month, day;
 	if (getline(iss, year, '-') && getline(iss, month, '-') && getline(iss, day))
 	{
 		if (!(atoi(year.c_str()) > 2008 && atoi(year.c_str()) < 2026))

@@ -8,7 +8,6 @@
 #include <cmath>
 #include <iomanip> // precision output , fixed empeche nota scientifique
 
-
 class BitcoinExchange {
 	private:
 		std::map<std::string, double> _dataBase;

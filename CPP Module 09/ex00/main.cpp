@@ -7,5 +7,5 @@ int main (int ac, char **av)
 		BitcoinExchange getInfo(av[1]);
 		return 0;
 	}
-	return std::cout << "Error: could not open file" << std::endl, 1;
+	return std::cerr << "Error: could not open file" << std::endl, 1;
 }

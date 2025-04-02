@@ -64,8 +64,8 @@ static bool isAllowed(char c)
 static bool isValid(std::string const& date)
 {
 	for (size_t i = 0; i < date.size() ; i++)
-	if (!isAllowed(date[i]))
-		return 0;
+		if (!isAllowed(date[i]))
+			return 0;
 	return 1;
 }
 

@@ -2,10 +2,10 @@
 
 int main (int ac, char **av)
 {
-	if (ac == 2)
+	if (ac >= 2)
 	{
-		PmergeMe sortInput();
+		PmergeMe mergeMe(av, ac);
 		return 0;
 	}
-	return std::cerr << "Error: " << std::endl, 1;
+	return std::cerr << "Error: Three elements required to start sorting." << std::endl, 1;
 }

@@ -6,6 +6,7 @@
 #include <deque>
 #include <algorithm>
 #include <climits>
+#include <utility> // pair & make_pair
 #include <cmath>
 #include <ctime>
 
@@ -24,12 +25,16 @@ class PmergeMe {
 
 	public:
 		PmergeMe(char **, int);
-		PmergeMe(PmergeMe const& copy);
+		PmergeMe(PmergeMe const&);
 		~PmergeMe(){}
-		PmergeMe& operator=(PmergeMe const& rhs);
+		PmergeMe& operator=(PmergeMe const&);
 
-		void parseInput();
-		void display();
-		void sortVec();
-		void sortDeq();
+		bool parseInput();
+		void display(std::vector<unsigned int>);
+
+		std::vector<unsigned int>	FJVec(std::vector<unsigned int>);
+		std::deque<unsigned int>	FJDeq(std::deque<unsigned int>);
+
+		std::vector<unsigned int>	genJacob(size_t limit);
+		std::vector<size_t>			orderOfInsert(size_t limit);
 };

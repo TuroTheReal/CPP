@@ -41,7 +41,7 @@ void PmergeMe::display(std::vector<unsigned int> vec){
 
 
 	// PRINT TIME
-	std::cout << "Time to process a range of " << (vec.size()) << " elements with std::vector : " << static_cast<double>(_vend - _vstart) / CLOCKS_PER_SEC << std::endl;
+	std::cout << std::fixed << std::setprecision(6) << "Time to process a range of " << (vec.size()) << " elements with std::vector : " << static_cast<double>(_vend - _vstart) / CLOCKS_PER_SEC << std::endl;
 	std::cout << "Time to process a range of " << (vec.size()) << " elements with std::deque : " << static_cast<double>(_dend - _dstart) / CLOCKS_PER_SEC << std::endl;
 }
 

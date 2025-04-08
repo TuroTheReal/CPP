@@ -42,8 +42,6 @@ void RPN::doOperation(){
 
 	while (ss >> token)
 	{
-		std::cout << "DEBUG = " << token << std::endl;
-
 		if (op.find(token) != std::string::npos)
 		{
 			if (_stack.size() != 2) {

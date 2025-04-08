@@ -86,9 +86,9 @@ std::vector<unsigned int> PmergeMe::genJacob(size_t limit){
 
 	std::vector<unsigned int> seq;
 	seq.reserve(limit);
-	seq.push_back(0);
+	seq.push_back(1);
 	if (limit > 1)
-		seq.push_back(1);
+		seq.push_back(3);
 	for (size_t i = 2; i < limit; i++)
 	{
 		size_t new_elem = seq[i - 1] + 2 * seq[i - 2];

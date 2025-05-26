@@ -1,9 +1,11 @@
 #include "header/Ice.hpp"
 #include "header/Character.hpp"
 
+Ice::Ice() : AMateria("ice"){}
+
 Ice::Ice(std::string const & type) : AMateria(type){
 	if (type != "ice")
-		throw std::invalid_argument("Wrong materia type" + type);
+		std::cout << "Wrong materia type: " << type << std::endl;
 }
 
 Ice::Ice(Ice const & copy) : AMateria(copy){}
@@ -25,6 +27,6 @@ Ice* Ice::clone() const{
 	return copy;
 }
 
-void Ice::use(Character& target){
+void Ice::use(ICharacter& target){
 	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }

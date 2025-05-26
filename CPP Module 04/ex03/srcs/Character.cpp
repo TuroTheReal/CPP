@@ -88,7 +88,7 @@ void Character::unequip(int idx){
 void Character::use(int idx, ICharacter& target){
 	for (int i = 0; i < 4; i++)
 	{
-		if (i == idx)
+		if (i == idx && _inventory[i])
 			_inventory[i]->use(target);
 	}
 }

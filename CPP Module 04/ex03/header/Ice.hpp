@@ -3,10 +3,8 @@
 #include "AMateria.hpp"
 
 class Ice : public AMateria {
-	private:
-		Ice(){}
-
 	public:
+		Ice();
 		Ice(std::string const & type);
 		Ice(Ice const & copy);
 		~Ice (){}
@@ -15,5 +13,5 @@ class Ice : public AMateria {
 
 		std::string const & getType() const;
 		Ice* clone() const;
-		void use(Character& target);
+		void use(ICharacter& target);
 };

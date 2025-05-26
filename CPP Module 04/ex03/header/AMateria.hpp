@@ -7,9 +7,9 @@ class ICharacter;
 class AMateria{
 	protected:
 		std::string _type;
-		AMateria(){}
 
-	public:
+		public:
+		AMateria();
 		AMateria(std::string const & type);
 		AMateria(AMateria const & copy);
 		virtual ~AMateria (){}

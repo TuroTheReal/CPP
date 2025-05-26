@@ -1,5 +1,7 @@
 #include "header/AMateria.hpp"
 
+AMateria::AMateria() : _type("default"){}
+
 AMateria::AMateria(std::string const & type) : _type(type){}
 
 AMateria::AMateria(AMateria const & copy) : _type(copy.getType()){};

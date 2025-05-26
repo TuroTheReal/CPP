@@ -1,9 +1,11 @@
 #include "header/Cure.hpp"
 #include "header/Character.hpp"
 
+Cure::Cure() : AMateria("cure"){}
+
 Cure::Cure(std::string const & type) : AMateria(type){
 	if (type != "cure")
-		throw std::invalid_argument("Wrong materia type" + type);
+		std::cout << "Wrong materia type: " << type << std::endl;
 }
 
 Cure::Cure(Cure const & copy) : AMateria(copy){}
@@ -25,6 +27,6 @@ Cure* Cure::clone() const{
 	return copy;
 }
 
-void Cure::use(Character& target){
+void Cure::use(ICharacter& target){
 	std::cout << "* heals " << target.getName() << "'s wounds*" << std::endl;
 }

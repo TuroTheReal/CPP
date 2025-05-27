@@ -21,10 +21,11 @@ void MateriaSource::learnMateria(AMateria *m){
 	{
 		if (!_inventory[i])
 		{
-			_inventory[i] = m->clone();
-			break;
+			_inventory[i] = m;
+			return;
 		}
 	}
+	delete m;
 }
 
 AMateria* MateriaSource::createMateria(std::string const & type){

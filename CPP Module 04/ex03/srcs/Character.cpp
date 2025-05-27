@@ -15,7 +15,10 @@ Character::Character(Character const& copy) : _name(copy._name){
 		_inventory[i] = NULL;
 	}
 	for (int i = 0; i < 4; i++)
-		_inventory[i] = copy._inventory[i]->clone();
+	{
+		if (copy._inventory[i])
+			_inventory[i] = copy._inventory[i]->clone();
+	}
 	for (int i = 0; i < 10; i++)
 	{
 		if (_unused[i])
@@ -34,7 +37,10 @@ Character& Character::operator=(Character const& rhs){
 			_inventory[i] = NULL;
 		}
 		for (int i = 0; i < 4; i++)
-			_inventory[i] = rhs._inventory[i]->clone();
+		{
+			if (rhs._inventory[i])
+				_inventory[i] = rhs._inventory[i]->clone();
+		}
 		for (int i = 0; i < 10; i++)
 		{
 			if (_unused[i])
@@ -57,46 +63,41 @@ void Character::equip(AMateria* m){
 	{
 		if (_inventory[i] == NULL)
 		{
-			_inventory[i] = m->clone();
-			break;
+			_inventory[i] = m;
+			return;
 		}
-
 	}
+	delete m;
 }
 
 void Character::addUnused(AMateria* m){
 	for (int i = 0; i < 10; i++){
-		if (_unused[i] == NULL)
+		if (_unused[i] == NULL){
 			_unused[i] = m;
+			return;
+		}
 	}
 }
 
 void Character::unequip(int idx){
-	if (!idx)
+	if (!idx || idx >= 4)
 		return;
-	for (int i = 0; i < 4; i++)
-	{
-		if (i == idx){
-			addUnused(_inventory[i]);
-			_inventory[i] = NULL;
-			break;
-		}
+	if (_inventory[idx]){
+		addUnused(_inventory[idx]);
+		_inventory[idx] = NULL;
 	}
 }
 
 
 void Character::use(int idx, ICharacter& target){
-	for (int i = 0; i < 4; i++)
-	{
-		if (i == idx && _inventory[i])
-			_inventory[i]->use(target);
-	}
+	if (idx >= 0 && idx < 4 && _inventory[idx])
+		_inventory[idx]->use(target);
 }
 
 Character::~Character(){
 	for (int i = 0; i < 4; i++)
 	{
-		if (_inventory[i])
+		if (_inventory[i] != NULL)
 			delete _inventory[i];
 		_inventory[i] = NULL;
 	}

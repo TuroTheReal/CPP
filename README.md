@@ -1,10 +1,10 @@
 # CPP Modules (00-09)
 
 ## 📋 Table of Contents
-- [About](#about)
+- [🎯 About](#about)
 - [Compilation](#compilation)
 - [Key Concepts Learned](#key-concepts-learned)
-- [Skills Developed](#🏆+skills-developed)
+- [Skills Developed](#skills-developed)
 - [Modules Overview](#modules-overview)
 - [42 School Standards](#42-school-standards)
 

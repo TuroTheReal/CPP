@@ -4,7 +4,7 @@
 - [About](#about)
 - [Compilation](#compilation)
 - [Key Concepts Learned](#key-concepts-learned)
-- [Skills Developed](#skills-developed)
+- [Skills Developed](#🏆+skills-developed)
 - [Modules Overview](#modules-overview)
 - [42 School Standards](#42-school-standards)
 
@@ -68,7 +68,7 @@ make re
 - **Code Organization**: Header/implementation separation
 
 
-## Skills Developed
+## 🏆 Skills Developed
 
 - **C++ Proficiency**: From basic syntax to advanced features
 - **OOP Mastery**: Deep understanding of object-oriented principles

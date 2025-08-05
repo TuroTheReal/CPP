@@ -1,7 +1,7 @@
 # CPP Modules (00-09)
 
 ## 📋 Table of Contents
-- [🎯 About](#about)
+- [About](#about)
 - [Compilation](#compilation)
 - [Key Concepts Learned](#key-concepts-learned)
 - [Skills Developed](#skills-developed)
@@ -9,14 +9,14 @@
 - [42 School Standards](#42-school-standards)
 
 
-## 🎯 About
+## About
 
 This repository contains my solutions for the **C++ Modules (CPP00-CPP09)** from 42 School. These modules are designed to introduce fundamental and advanced C++ concepts through progressive exercises, covering everything from basic syntax to advanced templating and STL containers.
 
 Each module focuses on specific aspects of C++ programming, building upon previous knowledge to create a comprehensive understanding of object-oriented programming and modern C++ practices.
 
 
-## 🔧 Compilation
+## Compilation
 
 Each module follows the same compilation standards:
 
@@ -41,7 +41,7 @@ make re
 ```
 
 
-## 💡 Key Concepts Learned
+## Key Concepts Learned
 
 ### Object-Oriented Programming
 - **Encapsulation**: Data hiding and access control
@@ -68,7 +68,7 @@ make re
 - **Code Organization**: Header/implementation separation
 
 
-## 🏆 Skills Developed
+## Skills Developed
 
 - **C++ Proficiency**: From basic syntax to advanced features
 - **OOP Mastery**: Deep understanding of object-oriented principles
@@ -79,7 +79,7 @@ make re
 - **Code Quality**: Clean, maintainable, and efficient code
 
 
-## 📚 Modules Overview
+## Modules Overview
 
 ### 🔰 CPP Module 00 - Namespaces, Classes, Member Functions
 **Key Topics:**
@@ -211,7 +211,7 @@ make re
 
 
 
-## 📏 42 School Standards
+## 42 School Standards
 
 ### Norm Requirements
 - ✅ Maximum 25 lines per function
@@ -228,7 +228,7 @@ make re
 - ✅ Comprehensive error handling
 
 
-## 📞 Contact
+## Contact
 
 - **GitHub**: [@TuroTheReal](https://github.com/TuroTheReal)
 - **Email**: arthurbernard.dev@gmail.com

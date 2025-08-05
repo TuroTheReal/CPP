@@ -68,7 +68,7 @@ make re
 - **Code Organization**: Header/implementation separation
 
 
-## 🏆 Skills Developed
+## Skills Developed
 
 - **C++ Proficiency**: From basic syntax to advanced features
 - **OOP Mastery**: Deep understanding of object-oriented principles

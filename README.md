@@ -1,6 +1,6 @@
 # CPP Modules (00-09)
 
-## 📋 Table of Contents
+## Table of Contents
 - [About](#about)
 - [Compilation](#compilation)
 - [Key Concepts Learned](#key-concepts-learned)

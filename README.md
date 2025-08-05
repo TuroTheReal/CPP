@@ -238,6 +238,4 @@ make re
 
 <p align="center">
   <img src="https://img.shields.io/badge/Made%20with-C++-blue.svg"/>
-  <img src="https://img.shields.io/badge/42-Paris-success.svg"/>
-  <img src="https://img.shields.io/badge/Grade-125%2F100-brightgreen.svg"/>
 </p>

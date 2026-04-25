@@ -7,6 +7,8 @@
 - [Skills Developed](#skills-developed)
 - [Modules Overview](#modules-overview)
 - [42 School Standards](#42-school-standards)
+- [Related Articles](#-related-articles)
+- [Contact](#contact)
 
 
 ## About
@@ -21,8 +23,8 @@ Each module focuses on specific aspects of C++ programming, building upon previo
 Each module follows the same compilation standards:
 
 ```bash
-# Navigate to specific module
-cd cpp0X/exXX
+# Navigate to specific module/exercise (quote because of the space in folder name)
+cd "CPP Module 0X/exXX"
 
 # Compile with Makefile
 make
@@ -92,7 +94,6 @@ make re
 **Exercises:**
 - `ex00`: Megaphone - String manipulation and basic I/O
 - `ex01`: My Awesome PhoneBook - Class implementation
-- `ex02`: The Job of Your Dreams - Advanced class usage
 
 ### 🔰 CPP Module 01 - Memory Allocation, Pointers, References
 **Key Topics:**
@@ -121,7 +122,6 @@ make re
 - `ex00`: My First Class in Orthodox Canonical Form
 - `ex01`: Towards a more useful fixed-point number class
 - `ex02`: Now we're talking
-- `ex03`: BSP (Binary Space Partitioning)
 
 ### 🔰 CPP Module 03 - Inheritance
 **Key Topics:**
